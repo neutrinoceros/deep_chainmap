@@ -1,6 +1,8 @@
 from collections import ChainMap
 from collections.abc import Mapping
 
+__version__ = "0.0.2"
+
 
 class DeepChainMap(ChainMap):
     """A recursive subclass of ChainMap"""
