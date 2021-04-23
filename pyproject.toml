@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[tool.isort]
+profile = "black"
+combine_as_imports = true
+
+[tool.coverage.run]
+omit = [
+  "setup.py",
+]
