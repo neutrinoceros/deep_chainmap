@@ -26,8 +26,8 @@ def test_get2():
 
 
 def test_dict1():
-    assert rcm.flatten() == {"a": {"b": 2, "c": {"d": 4, "e": 6, "f": 66, "g": 77}}}
+    assert rcm.to_dict() == {"a": {"b": 2, "c": {"d": 4, "e": 6, "f": 66, "g": 77}}}
 
 
 def test_dict2():
-    assert rcm["a"]["c"].flatten() == {"d": 4, "e": 6, "f": 66, "g": 77}
+    assert rcm["a"]["c"].to_dict() == {"d": 4, "e": 6, "f": 66, "g": 77}

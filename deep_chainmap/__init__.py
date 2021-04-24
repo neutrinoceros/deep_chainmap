@@ -1,7 +1,7 @@
 from collections import ChainMap
 from collections.abc import Mapping
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 
 class DeepChainMap(ChainMap):
@@ -15,7 +15,7 @@ class DeepChainMap(ChainMap):
             return DeepChainMap(*(submap[key] for submap in submaps))
         return super().__getitem__(key)
 
-    def flatten(self) -> dict:
+    def to_dict(self) -> dict:
         def depth_first_update(target: dict, source: Mapping) -> None:
             for key, val in source.items():
                 if isinstance(val, Mapping):
@@ -25,8 +25,8 @@ class DeepChainMap(ChainMap):
                 else:
                     target[key] = val
 
-        flat = {}
+        d = {}
         for mapping in reversed(self.maps):
-            depth_first_update(flat, mapping)
+            depth_first_update(d, mapping)
 
-        return flat
+        return d
