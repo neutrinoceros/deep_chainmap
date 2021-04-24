@@ -1,7 +1,7 @@
 from collections import ChainMap
 from collections.abc import Mapping
 
-__version__ = "0.0.3"
+__version__ = "0.1.0"
 
 
 class DeepChainMap(ChainMap):
