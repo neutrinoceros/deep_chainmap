@@ -23,7 +23,7 @@ mechanism only works for the top level of a mapping.
 recurive lookups in arbitrarily deeply nested mappings. Let's illustrate this
 with a simple example. We will simulate 3 layers of mapping, and pretend they
 were obtained from different sources (a default configuration, a configuration
-file and the command line).
+file and parameters configured at runtime).
 
 ```python
 from deep_chainmap import DeepChainMap
@@ -69,7 +69,7 @@ config_file_layer = {
     },
 }
 
-cli_layer = {
+runtime_layer = {
     "logging_level": "debug",
     "database": {
         "url": "https://my.database.api",
@@ -78,11 +78,13 @@ cli_layer = {
 }
 
 # now building a DeepChainMap
-cm = DeepChainMap(cli_layer, config_file_layer, default_layer)
+cm = DeepChainMap(runtime_layer, config_file_layer, default_layer)
 ```
 
 Now when a single parameter is requested, it is looked up in each layer until a
-value is found, by order of insertion (here the `cli_layer` takes priority).
+value is found, by order of insertion. Here the `runtime_layer` takes priority
+over the `config_file_layer`, which in turns takes priority over the
+`default_layer`.
 ```python
 >>> cm["logging_level"]
 'debug'
@@ -92,9 +94,9 @@ value is found, by order of insertion (here the `cli_layer` takes priority).
 100
 ```
 
-It is possible to produce a flat view of a `DeepChainMap` instance as a builtin `dict`:
+A native `dict` view of a `DeepChainMap` object can be constructed via the `to_dict` method
 ```python
->>> cm.flatten()
+>>> cm.to_dict()
 {
     'architecture': 'cpu',
     'logging_level': 'debug',
@@ -124,9 +126,9 @@ DeepChainMap({'resolution': {'x': {'spacing': 'log'}, 'z': {'npoints': 1}}},
               'type': 'rectangular'})
 ```
 
-Which implies that they can be flatten as well
+Which implies that they can be view as builtin dictionnaries as well
 ```python
->>> cm["mesh"].flatten()
+>>> cm["mesh"].to_dict()
 {
     'type': 'rectangular',
     'resolution': {
