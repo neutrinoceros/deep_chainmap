@@ -1,7 +1,18 @@
 from collections import ChainMap
 from collections.abc import Mapping
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
+
+
+def _depth_first_update(target: dict, source: Mapping) -> None:
+    for key, val in source.items():
+        if not isinstance(val, Mapping):
+            target[key] = val
+            continue
+
+        if key not in target:
+            target[key] = {}
+        _depth_first_update(target[key], val)
 
 
 class DeepChainMap(ChainMap):
@@ -16,17 +27,7 @@ class DeepChainMap(ChainMap):
         return super().__getitem__(key)
 
     def to_dict(self) -> dict:
-        def depth_first_update(target: dict, source: Mapping) -> None:
-            for key, val in source.items():
-                if isinstance(val, Mapping):
-                    if key not in target:
-                        target[key] = {}
-                    depth_first_update(target[key], val)
-                else:
-                    target[key] = val
-
         d = {}
         for mapping in reversed(self.maps):
-            depth_first_update(d, mapping)
-
+            _depth_first_update(d, mapping)
         return d
