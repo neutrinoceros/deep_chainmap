@@ -24,13 +24,13 @@ repos:
         - id: remove-tabs
 
   - repo: https://github.com/PyCQA/isort
-    rev: 5.9.2
+    rev: 5.9.3
     hooks:
       - id: isort
         additional_dependencies: ['toml==0.10.2']
 
   - repo: https://github.com/psf/black
-    rev: 21.6b0
+    rev: 21.9b0
     hooks:
       - id: black
         language_version: python3
