@@ -14,12 +14,12 @@ repos:
       - id: no-commit-to-branch
 
   - repo: https://github.com/asottile/setup-cfg-fmt
-    rev: v1.20.0
+    rev: v1.20.1
     hooks:
       - id: setup-cfg-fmt
 
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.1.10
+    rev: v1.1.13
     hooks:
         - id: remove-tabs
 
@@ -30,7 +30,7 @@ repos:
         additional_dependencies: ['toml==0.10.2']
 
   - repo: https://github.com/psf/black
-    rev: 21.12b0
+    rev: 22.3.0
     hooks:
       - id: black
         language_version: python3
