@@ -1,3 +1,5 @@
+import pytest
+
 from deep_chainmap import DeepChainMap
 
 c1 = {
@@ -15,6 +17,11 @@ c2 = {"a": {}}
 c3 = {"a": {"c": {"e": 6, "f": 66}}}
 
 rcm = DeepChainMap(c3, c2, c1)
+
+
+def test_empty():
+    with pytest.raises(KeyError):
+        DeepChainMap()["key"]
 
 
 def test_get1():
