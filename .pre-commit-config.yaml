@@ -1,10 +1,9 @@
 ci:
-    autofix_prs: true
     autoupdate_schedule: "quarterly"
 
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.3.0
+    rev: v5.0.0
     hooks:
       - id: trailing-whitespace
       - id: end-of-file-fixer
@@ -13,13 +12,8 @@ repos:
       - id: check-merge-conflict
       - id: no-commit-to-branch
 
-  - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.2.0
-    hooks:
-        - id: remove-tabs
-
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.6
+    rev: v0.9.2
     hooks:
     - id: ruff-format
     - id: ruff
