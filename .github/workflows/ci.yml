@@ -1,5 +1,13 @@
 name: CI
-on: [push, pull_request]
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    paths-ignore:
+    - README.md
+    - CHANGELOG.md
+
 jobs:
   tests:
     strategy:
