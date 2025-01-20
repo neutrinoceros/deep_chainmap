@@ -1,11 +1,62 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.isort]
-profile = "black"
-combine_as_imports = true
-
-[tool.coverage.run]
-omit = [
-  "setup.py",
+[project]
+name = "deep_chainmap"
+version = "0.1.1"
+description = "A recursive subclass of ChainMap"
+authors = [
+    { name = "C.M.T. Robert" },
 ]
+classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+]
+requires-python = ">=3.6"
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.license]
+text = "MIT"
+
+[project.urls]
+Homepage = "https://github.com/neutrinoceros/deep_chainmap"
+
+[dependency-groups]
+test = [
+    "pytest>=6.0.2",
+]
+covcheck = [
+  {"include-group" = "test"},
+  "coverage[toml] ; python_version < '3.11'",
+  "coverage ; python_version >= '3.11'",
+]
+
+[tool.ruff.lint]
+ignore = ["E501"]
+select = [
+    "E",
+    "F",
+    "W",
+    "C4",  # flake8-comprehensions
+    "B",   # flake8-bugbear
+    "YTT", # flake8-2020
+    "I",   # isort
+    "UP",  # pyupgrade
+    "RUF022" # unsorted-dunder-all
+]
+
+[tool.mypy]
+python_version = "3.6"
+warn_return_any = true
+warn_unused_configs = true
