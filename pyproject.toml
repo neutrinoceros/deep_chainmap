@@ -42,6 +42,18 @@ covcheck = [
   "coverage ; python_version >= '3.11'",
 ]
 
+[tool.hatch]
+version.source = "vcs"
+
+[tool.hatch.build.targets.sdist]
+only-include = [
+    "src",
+    "tests",
+    "LICENSE",
+    "CHANGELOG.md",
+    "README.md",
+]
+
 [tool.ruff.lint]
 ignore = ["E501"]
 select = [
@@ -58,5 +70,5 @@ select = [
 
 [tool.mypy]
 python_version = "3.9"
-warn_return_any = true
-warn_unused_configs = true
+strict = true
+warn_unused_ignores = true
