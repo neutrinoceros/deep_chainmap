@@ -1,15 +1,14 @@
 # DeepChainMap
-[![PyPI](https://img.shields.io/pypi/v/deep-chainmap)](https://pypi.org/project/deep-chainmap/)
-[![codecov](https://codecov.io/gh/neutrinoceros/deep_chainmap/branch/main/graph/badge.svg)](https://codecov.io/gh/neutrinoceros/deep_chainmap)
+[![PyPI](https://img.shields.io/pypi/v/deep-chainmap?logo=pypi&logoColor=white&label=PyPI)](https://pypi.org/project/deep-chainmap/)
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/neutrinoceros/deep_chainmap/main.svg)](https://results.pre-commit.ci/latest/github/neutrinoceros/deep_chainmap/main)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 
 A recursive subclass of [`collections.ChainMap`](https://docs.python.org/3/library/collections.html#collections.ChainMap).
 
 ## Installation
 
 ```shell
-pip install deep-chainmap
+python -m pip install deep-chainmap
 ```
 
 ## Usage
