@@ -1,6 +1,6 @@
 from collections import ChainMap
 from collections.abc import Mapping
-from typing import TypeVar, Generic
+from typing import Generic, TypeVar
 
 __version__ = "0.1.2"
 
