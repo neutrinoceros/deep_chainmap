@@ -4,16 +4,16 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "deep_chainmap"
-version = "0.1.2"
-description = "A recursive subclass of ChainMap"
+version = "0.1.3"
+description = "A recursive subclass of `collections.ChainMap`"
 authors = [
     { name = "C.M.T. Robert" },
 ]
 license = "MIT"
 license-files = ["LICENSE"]
 classifiers = [
+    "Intended Audience :: Developers",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
