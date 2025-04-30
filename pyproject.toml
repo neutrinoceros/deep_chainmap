@@ -1,6 +1,6 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["flit_core >=3.11,<4"]
+build-backend = "flit_core.buildapi"
 
 [project]
 name = "deep_chainmap"
@@ -9,8 +9,9 @@ description = "A recursive subclass of ChainMap"
 authors = [
     { name = "C.M.T. Robert" },
 ]
+license = "MIT"
+license-files = ["LICENSE"]
 classifiers = [
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.9",
@@ -25,9 +26,6 @@ requires-python = ">=3.9"
 file = "README.md"
 content-type = "text/markdown"
 
-[project.license]
-text = "MIT"
-
 [project.urls]
 Homepage = "https://github.com/neutrinoceros/deep_chainmap"
 
@@ -41,17 +39,8 @@ covcheck = [
   "coverage ; python_version >= '3.11'",
 ]
 
-[tool.hatch]
-version.source = "vcs"
-
-[tool.hatch.build.targets.sdist]
-only-include = [
-    "src",
-    "tests",
-    "LICENSE",
-    "CHANGELOG.md",
-    "README.md",
-]
+[tool.flit.sdist]
+include = ["tests/"]
 
 [tool.ruff.lint]
 ignore = ["E501"]
