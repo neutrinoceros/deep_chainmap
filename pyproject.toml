@@ -35,9 +35,9 @@ test = [
     "pytest>=6.0.2",
 ]
 covcheck = [
-  {"include-group" = "test"},
-  "coverage[toml] ; python_version < '3.11'",
-  "coverage ; python_version >= '3.11'",
+    {"include-group" = "test"},
+    "coverage[toml] ; python_version < '3.11'",
+    "coverage>=7.10.0",
 ]
 
 [tool.flit.sdist]

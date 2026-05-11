@@ -138,7 +138,7 @@ test = [
 
 [package.metadata.requires-dev]
 covcheck = [
-    { name = "coverage", marker = "python_full_version >= '3.11'" },
+    { name = "coverage", specifier = ">=7.10.0" },
     { name = "coverage", extras = ["toml"], marker = "python_full_version < '3.11'" },
     { name = "pytest", specifier = ">=6.0.2" },
 ]
