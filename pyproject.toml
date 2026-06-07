@@ -4,7 +4,7 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "deep_chainmap"
-version = "0.1.3"
+version = "0.2.0"
 description = "A recursive subclass of `collections.ChainMap`"
 authors = [
     { name = "C.M.T. Robert" },
@@ -29,6 +29,7 @@ content-type = "text/markdown"
 
 [project.urls]
 Homepage = "https://github.com/neutrinoceros/deep_chainmap"
+Changelog = "https://github.com/neutrinoceros/deep_chainmap/blob/main/CHANGELOG.md"
 
 [dependency-groups]
 test = [

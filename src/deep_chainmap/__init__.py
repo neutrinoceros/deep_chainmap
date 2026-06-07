@@ -2,8 +2,6 @@ from collections import ChainMap
 from collections.abc import Mapping
 from typing import Generic, TypeVar
 
-__version__ = "0.1.2"
-
 K = TypeVar("K")
 V = TypeVar("V")
 
