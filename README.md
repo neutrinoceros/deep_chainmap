@@ -132,6 +132,7 @@ functional implementation of a depth-first dict-merge algorithm as
 ```python
 from deep_chainmap import DeepChainMap
 
+
 def depth_first_merge(*mappings) -> dict:
     return DeepChainMap(*mappings).to_dict()
 ```
