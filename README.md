@@ -71,7 +71,7 @@ runtime_layer = {
     "logging_level": "debug",
     "database": {
         "url": "https://my.database.api",
-        "keep_in_sync": True
+        "keep_in_sync": True,
     },
 }
 
